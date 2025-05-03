@@ -1,9 +1,12 @@
->This brach offers a new parameter --musicpath <your_music_path>, trying to solve an issue when submiting lrc in StreamMusic returns 404.
->I try to add this path in front of the submitted path When a relative path is received to get a fullpath of the music file.
->It is an experimental change and only tested on my ubuntu vm, use with your own risk.
+> This brach offers a new parameter --musicpath <your_music_path>, trying to solve an issue when submiting lrc in StreamMusic returns 404.
 
->Usage:
->lrcapi --musicpath /your_music_path , the same as MusicFolder in navidrome.
+> I try to add this path in front of the submitted path When a relative path is received to get a fullpath of the music file.
+
+> It is an experimental change and only tested on my ubuntu vm, use with your own risk.
+
+> Usage:
+
+> lrcapi --musicpath /your_music_path , the same as MusicFolder in navidrome.
 
 
 <div align="center">
