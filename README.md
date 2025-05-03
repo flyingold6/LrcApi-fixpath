@@ -7,7 +7,7 @@
 > 为了改这玩意，现学的python，没玩过docker，不知道docker上有没有这个问题，抛个砖，期待高手能有更好的解决方案。
 
 
-> 使用方法：l
+> 使用方法：
 
 > rcapi --musicpath /your_music_path，和navidrome的MusicFolder参数一致就行
 
