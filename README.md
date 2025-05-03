@@ -1,3 +1,11 @@
+本分支提供了一个额外参数--musicpath 音乐文件夹起始路径，尝试解决音流获取到的歌曲路径为相对路径，从而歌词提交报404找不到文件的问题
+当歌词提交时提供的路径判断为相对路径时，尝试添加此起始路径来转变为完整路径
+本方案仅为临时测试方案，目前仅在本人的ubuntu虚拟机上编译测试正常工作，使用风险自负。
+为了改这玩意，现学的python，没玩过docker，不知道docker上有没有这个问题，抛个砖，期待高手能有更好的解决方案。
+
+使用方法：lrcapi --musicpath /your_music_path，和navidrome的MusicFolder参数一致就行
+
+
 <div align="center">
     <img alt="LOGO" src="https://cdn.jsdelivr.net/gh/HisAtri/LrcAPI@main/src/img/LrcAPI-Text-Extra.png" width="313" height="400" />
 </div>

@@ -4,7 +4,7 @@
 try:
     import mutagen.wave
 
-    from component.music_tag.id3 import Id3File
+    from music_tag.id3 import Id3File
 
 
     class WaveId3File(Id3File):

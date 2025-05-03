@@ -11,6 +11,7 @@ parser = argparse.ArgumentParser(description="启动LRCAPI服务器")
 # 添加一个 `--port` 参数，默认值28883
 parser.add_argument('--port', type=int, default=28883, help='应用的运行端口，默认28883')
 parser.add_argument('--auth', type=str, default='', help='用于验证Header.Authentication字段，建议纯ASCII字符')
+parser.add_argument("--musicpath",type=str, default='',help='定义音乐文件夹起始路径，用于歌词提交，如果客户端提交的文件是相对路径，则添加此起始路径转换为完整路径')
 parser.add_argument("--debug", action="store_true", help="Enable debug mode")
 parser.add_argument('--ip', type=str, default='*', help='服务器监听IP，默认*')
 parser.add_argument('--token', type=str, default='', help='锂API接口的Token')
@@ -44,7 +45,8 @@ DEFAULT_DATA = {
                 "model": "gemini-2.0-flash",
                 "base_url": "https://lrc.cx/v1",
                 "api_key": ""
-            }
+            },
+            "musicpath": ""
 }
 
 class Args:
@@ -126,6 +128,7 @@ class Args:
     def __load_arg(self):
         auth = kw_args.auth
         port = kw_args.port
+        musicpath = kw_args.musicpath
         ip = kw_args.ip
         token = kw_args.token
         ai_type = kw_args.ai_type
@@ -138,6 +141,8 @@ class Args:
             if not isinstance(self.__data.get("server"), dict):
                 self.__data["server"] = {"ip": "*"}
             self.__data["server"]["port"] = port
+        if musicpath:
+            self.__data["musicpath"] = musicpath
         if ip:
             if not isinstance(self.__data.get("server"), dict):
                 self.__data["server"] = {"ip": "*"}
@@ -177,8 +182,9 @@ if __name__ == '__main__':
             "port": 28883
         },
         "auth": "",
-        "token": ""
+        "token": "",
+        "musicpath": ""
     }
     config = Args(default_config=default)
     ~config
-    print(config("server", "port"))
+    print(config("server", "port", "musicpath"))

@@ -11,6 +11,8 @@ from mod.auth import require_auth_decorator
 
 logger = logging.getLogger(__name__)
 
+from mod.args import args
+
 @app.route('/tag', methods=['POST', 'PUT'], endpoint='set_tag_endpoint')
 @app.route('/confirm', methods=['POST', 'PUT'], endpoint='set_tag_endpoint')
 @require_auth_decorator(permission='rw')
@@ -23,6 +25,9 @@ def set_tag():
     except UnicodeError:
         return "Invalid encoding.", 422
     audio_path: str = music_data.get("path")
+    audio_path_first: str = audio_path[0] if audio_path else ""
+    if audio_path_first != "/" and audio_path_first != "":
+        audio_path = args("musicpath") + "/" + audio_path
     if not audio_path:
         return "Missing 'path' key in JSON.", 422
     logger.debug(f"Editing file {audio_path}")
