@@ -1,4 +1,6 @@
-> 本分支提供了一个额外参数--musicpath 音乐文件夹起始路径，尝试解决音流获取到的歌曲路径为相对路径，从而歌词提交报404找不到文件的问题
+><b>音流1.3.8版本已修正此问题，请更新新版音流APP，此分支弃用。</b> 
+
+本分支提供了一个额外参数--musicpath 音乐文件夹起始路径，尝试解决音流获取到的歌曲路径为相对路径，从而歌词提交报404找不到文件的问题
 
 > 当歌词提交时提供的路径判断为相对路径时，尝试添加此起始路径来转变为完整路径
 
@@ -9,7 +11,7 @@
 
 > 使用方法：
 
-> rcapi --musicpath /your_music_path，和navidrome的MusicFolder参数一致就行
+> lrcapi --musicpath /your_music_path，和navidrome的MusicFolder参数一致就行
 
 
 

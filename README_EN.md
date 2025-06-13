@@ -1,4 +1,6 @@
-> This brach offers a new parameter --musicpath <your_music_path>, trying to solve an issue when submiting lrc in StreamMusic returns 404.
+><b>Stream Music 1.3.8 has fixed this issue, please update your Stream Music to the latest version. This branch is marked as obsolete.</b>
+
+ This brach offers a new parameter --musicpath <your_music_path>, trying to solve an issue when submiting lrc in StreamMusic returns 404.
 
 > I try to add this path in front of the submitted path When a relative path is received to get a fullpath of the music file.
 
